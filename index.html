@@ -38,42 +38,45 @@
         </div>
         <div class="space-y-2 text-sm md:text-base leading-relaxed">
             <p><span class="text-purple-400">[TIMESTAMP]</span> 2026-03-08 (Women's Day)</p>
-            <p><span class="text-red-400">[FAIL]</span> Celebration_Task failed to execute.</p>
-            <p><span class="text-cyan-400">[STATUS]</span> Husband.exe crashed due to heavy workload.</p>
+            <p><span class="text-red-400">[FAIL]</span> Celebration_Task failed to execute on schedule.</p>
+            <p><span class="text-cyan-400">[STATUS]</span> Husband.exe crashed due to heavy workload / memory leak.</p>
             <p><span class="text-yellow-400">[ACTION]</span> Deploying emergency compensation patches...</p>
             <div class="pt-4 border-t border-slate-700 mt-4">
-                <p class="text-cyan-300 font-bold italic">"I am so sorry I missed wishing you yesterday. You are the heart of our home. Let me make it up to you today."</p>
+                <p class="text-cyan-300 font-bold italic text-center">
+                    "I am deeply sorry I missed wishing you yesterday. You are the heartbeat of our home. Please accept these hotfixes."
+                </p>
             </div>
         </div>
     </div>
 
-    <div class="w-full max-w-3xl mb-12 text-center p-4 border border-purple-500/30 bg-purple-500/5 rounded-lg">
+    <div class="w-full max-w-3xl mb-12 text-center p-6 border border-purple-500/30 bg-purple-500/5 rounded-lg">
         <h2 class="text-purple-400 text-sm uppercase tracking-widest mb-2 font-bold">Role: Lead Family Architect</h2>
-        <p class="text-slate-300 italic">"The best mother to <span class="text-purple-400 font-bold"> Diyan </span> and the best wife I could ever imagine."</p>
+        <p class="text-slate-300 italic mb-2">"To the most incredible mother of <span class="text-purple-400 font-bold"> Diyan </span>."</p>
+        <p class="text-cyan-400 text-xs">// You are the reason our family compiles without errors.</p>
     </div>
 
-    <h2 class="neon-purple text-xl mb-6 uppercase tracking-widest font-bold text-center">Recovery Vouchers</h2>
+    <h2 class="neon-purple text-xl mb-6 uppercase tracking-widest font-bold text-center">Redeemable Recovery Patches</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mb-12">
         
-        <div class="btn-purple p-6 rounded-xl text-center cursor-pointer" onclick="alert('PERFUME PROTOCOL: We are going to the boutique! Pick any scent you love.')">
+        <div class="btn-purple p-6 rounded-xl text-center cursor-pointer" onclick="redeem('New Perfume Shopping 🛍️')">
             <h3 class="font-bold mb-2 uppercase text-cyan-400">The Scent</h3>
             <p class="text-[10px] opacity-60 mb-4">EXECUTE: BOUTIQUE_SPREE</p>
-            <p class="text-sm">A trip to your favorite perfume shop in Male'. Pick any scent, my treat.</p>
-            <div class="mt-4 text-[10px] border border-purple-400/50 py-1 bg-purple-500/20 uppercase tracking-widest">Redeem Now</div>
+            <p class="text-sm">A trip to your favorite perfume shop in Male'. Pick any scent you love, it's on me.</p>
+            <div class="mt-4 text-[10px] border border-purple-400/50 py-1 bg-purple-500/20 uppercase tracking-widest">Send to WhatsApp</div>
         </div>
 
-        <div class="btn-purple p-6 rounded-xl text-center cursor-pointer" onclick="alert('NAVIGATION: Sinamalé Bridge crossing initiated. Sea breeze therapy loading...')">
+        <div class="btn-purple p-6 rounded-xl text-center cursor-pointer" onclick="redeem('A Long Bridge Ride 🏍️')">
             <h3 class="font-bold mb-2 uppercase text-cyan-400">The Bridge</h3>
             <p class="text-[10px] opacity-60 mb-4">STATUS: CROSS_ISLAND_RIDE</p>
-            <p class="text-sm">A long ride across the bridge to Hulhumalé. Just us, the breeze, and no distractions.</p>
-            <div class="mt-4 text-[10px] border border-purple-400/50 py-1 bg-purple-500/20 uppercase tracking-widest">Redeem Now</div>
+            <p class="text-sm">A long ride across the bridge to Hulhumalé Phase 2. Sea breeze and total peace.</p>
+            <div class="mt-4 text-[10px] border border-purple-400/50 py-1 bg-purple-500/20 uppercase tracking-widest">Send to WhatsApp</div>
         </div>
 
-        <div class="btn-purple p-6 rounded-xl text-center cursor-pointer" onclick="alert('RESERVATION: Date night protocol accepted. Dress up, let\'s go!')">
+        <div class="btn-purple p-6 rounded-xl text-center cursor-pointer" onclick="redeem('A Waterfront Dinner Date 🍽️')">
             <h3 class="font-bold mb-2 uppercase text-cyan-400">The Date</h3>
             <p class="text-[10px] opacity-60 mb-4">MODE: WATERFRONT_DINNER</p>
-            <p class="text-sm">A dinner at your favorite spot in Male' or Hulhumalé. No chores, just us.</p>
-            <div class="mt-4 text-[10px] border border-purple-400/50 py-1 bg-purple-500/20 uppercase tracking-widest">Redeem Now</div>
+            <p class="text-sm">A nice dinner at your favorite spot in Male'. No chores, just a proper celebration.</p>
+            <div class="mt-4 text-[10px] border border-purple-400/50 py-1 bg-purple-500/20 uppercase tracking-widest">Send to WhatsApp</div>
         </div>
 
     </div>
@@ -81,7 +84,7 @@
     <div class="w-full max-w-2xl bg-slate-900 border-cyan rounded-md overflow-hidden mb-12">
         <div class="bg-slate-800 px-4 py-2 text-xs flex justify-between items-center">
             <span>appreciation_logs.txt</span>
-            <span class="text-green-500 font-bold">LIVE FEED</span>
+            <span class="text-green-500 font-bold">LIVE_FEED</span>
         </div>
         <div id="reason-container" class="h-48 overflow-y-auto p-4 text-xs space-y-2">
             </div>
@@ -89,22 +92,29 @@
 
     <div class="text-center pb-20">
         <button id="rewindBtn" class="bg-cyan-500 text-slate-950 px-10 py-5 font-bold rounded-full hover:bg-cyan-300 transition-all shadow-[0_0_20px_rgba(34,211,238,0.5)] uppercase tracking-widest">
-            Rewind System Clock
+            Rewind System Clock: Mar 08
         </button>
     </div>
 
     <div id="successOverlay" class="fixed inset-0 bg-slate-950 hidden flex-col items-center justify-center p-6 text-center z-50">
         <h1 class="neon-cyan text-5xl md:text-7xl font-bold mb-6">08 MARCH 2026</h1>
         <p class="text-xl md:text-3xl text-purple-400 max-w-3xl leading-relaxed">
-            "In my heart, the date hasn't changed. Every day is your day. I am so lucky to have you as my wife and as Diyan's mother."
+            "In my heart, the clock is stuck on your day. Every day is Women's Day. I love you, and I am so grateful you are in my life."
         </p>
         <div class="mt-12">
             <div class="text-cyan-400 animate-bounce mb-8">↓↓ System Status: 100% Loved ↓↓</div>
-            <button onclick="location.reload()" class="text-xs opacity-30 hover:opacity-100 uppercase tracking-widest underline">Return to Reality</button>
+            <button onclick="location.reload()" class="text-xs opacity-30 hover:opacity-100 uppercase tracking-widest underline">Return to Main Terminal</button>
         </div>
     </div>
 
     <script>
+        function redeem(voucherName) {
+            const phoneNumber = "9609113138";
+            const message = encodeURIComponent(`Hi! I've decided to forgive you (partially) 😉. I am redeeming my voucher for: ${voucherName}. Let's make it happen!`);
+            alert("Voucher Selected! Opening WhatsApp to notify me...");
+            window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
+        }
+
         const reasons = [
             "You are the most patient mother to Diyan.",
             "You handle our home with more grace than any CEO.",
